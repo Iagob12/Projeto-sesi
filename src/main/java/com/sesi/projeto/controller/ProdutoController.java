@@ -1,4 +1,4 @@
-package com.sesi.projeto.controller;
+/*package com.sesi.projeto.controller;
 
 import java.util.List;
 
@@ -16,7 +16,7 @@ import com.sesi.projeto.entities.Produto;
 import com.sesi.projeto.repository.ProdutoRepository;
 
 @RestController
-@RequestMapping("produto")
+@RequestMapping(value = "produto")
 public class ProdutoController {
 	
 	@Autowired
@@ -40,7 +40,7 @@ public class ProdutoController {
 		return ResponseEntity.ok(prod);
     }
 	 
-}
+}*/
 
 
 

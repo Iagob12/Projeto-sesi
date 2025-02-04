@@ -1,11 +1,8 @@
-package com.sesi.projeto.controller;
-
-import java.util.List;
+/*package com.sesi.projeto.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -20,29 +17,15 @@ import com.sesi.projeto.repository.PedidoRepository;
 @RequestMapping(value = "pagamento")
 public class PedidoController {
 
-	@Autowired
-	PedidoRepository repo;
-	
-	@Autowired
-	PedidoDto dto;
-	
-	@GetMapping(value = "/all")
-	public ResponseEntity <List<Pedido>> mostrarTodos(){
-		List<Pedido> ped = repo.findAll();
-		return ResponseEntity.ok(ped);
-	}
-	
-	@GetMapping(value = "/{id}")
-	public ResponseEntity<?> buscarPorId(@RequestBody Long id){
-		Pedido ped = repo.getById(id);
-		return ResponseEntity.ok(ped);
-	}
-	
-	@PostMapping(value = "/cadastrar")
-	public ResponseEntity<Pedido> registrarProduto(Long id){
-		Pedido ped = new Pedido(dto);
-		return ResponseEntity.ok(ped);
-	}
+    @Autowired
+    PedidoRepository repo;
+
+    @PostMapping("/cadastrar")
+    public ResponseEntity<Pedido> registrarProduto(@RequestBody PedidoDto dto) {
+        Pedido ped = new Pedido(dto);
+        return ResponseEntity.ok(ped);
+    }
+
 	
 	@DeleteMapping(value = "/delete/{id}")
 	public String deletarProduto(Long id) {
@@ -54,8 +37,8 @@ public class PedidoController {
 	public Pedido updateUsuario(Long id, Pedido pedidoAtualizado) {
 		Pedido ped = repo.findById(id).get();
 		ped.setMomento(pedidoAtualizado.getMomento());
-		ped.setStatusDoPedido(pedidoAtualizado.getStatusDoPedido());
+		ped.setStatus(pedidoAtualizado.getStatus());
 		
 		return repo.save(ped);
 	}
-}
+}*/

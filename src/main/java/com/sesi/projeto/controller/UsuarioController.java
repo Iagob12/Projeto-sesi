@@ -1,4 +1,4 @@
-package com.sesi.projeto.controller;
+/*package com.sesi.projeto.controller;
 
 import java.util.List;
 
@@ -26,7 +26,7 @@ public class UsuarioController {
 	@Autowired
 	UsuarioDto dto;
 	
-	@GetMapping(value = "/all")
+	@GetMapping
 	public ResponseEntity <List<Usuario>> mostrarTodos(){
 		List<Usuario> usuario = repo.findAll();
 		return ResponseEntity.ok(usuario);
@@ -38,7 +38,7 @@ public class UsuarioController {
 		return ResponseEntity.ok(usuario);
 	}
 	
-	@PostMapping(value = "/cadastrar")
+	@PostMapping("/usuario")
 	public ResponseEntity<Usuario> registrarUsuario(Long id){
 		Usuario usuario = new Usuario(dto);
 		return ResponseEntity.ok(usuario);
@@ -61,5 +61,5 @@ public class UsuarioController {
 		
 		return repo.save(usuario);
 	}
-}
+}*/
 

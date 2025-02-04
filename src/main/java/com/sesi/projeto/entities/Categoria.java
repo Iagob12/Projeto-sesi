@@ -1,11 +1,15 @@
 package com.sesi.projeto.entities;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import com.sesi.projeto.dto.CategoriaDto;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -17,6 +21,9 @@ public class Categoria {
 	private long id;
 	private String nome;
 	
+
+	@ManyToMany(mappedBy = "categorias")
+	private Set<Produto> produto = new HashSet<>();
 	
 	public Categoria(long id, String nome) {
 		this.id = id;

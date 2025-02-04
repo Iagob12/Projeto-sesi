@@ -2,8 +2,14 @@ package com.sesi.projeto.dto;
 
 import java.time.Instant;
 
-import ch.qos.logback.core.status.Status;
+import org.springframework.stereotype.Component;
 
-public record PedidoDto(Instant momento, Status StatusDoPedido) {
+import com.sesi.projeto.entities.StatusDoPedido;
 
+@Component
+public record PedidoDto(Instant momento, StatusDoPedido status) {
+
+    public PedidoDto() {
+        this(Instant.now(), null);  // Defina um valor padrão para momento
+    }
 }
